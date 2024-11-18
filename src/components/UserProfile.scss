@@ -1,0 +1,232 @@
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #111827 0%, #1F2937 100%);
+  color: white;
+  padding: 2rem 1rem;
+
+  &__container {
+    max-width: 1024px;
+    margin: 0 auto;
+    display: grid;
+    gap: 2rem;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    background: rgba(31, 41, 55, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+
+    @media (max-width: 640px) {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+  }
+
+  &__user-info {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+
+    @media (max-width: 480px) {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  &__avatar-container {
+    position: relative;
+  }
+
+  &__avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #60A5FA;
+  }
+
+  &__avatar-edit {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: #60A5FA;
+    border: none;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    @include flex-center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background: #3B82F6;
+    }
+  }
+
+  &__user-details {
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    p {
+      color: #9CA3AF;
+    }
+  }
+
+  &__settings-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+  }
+
+  &__card {
+    background: rgba(31, 41, 55, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    padding: 1.5rem;
+  }
+
+  &__card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+
+    svg {
+      color: #60A5FA;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+  }
+
+  &__plan-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  &__plan-badge {
+    background: linear-gradient(90deg, #2563EB 0%, #7C3AED 100%);
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-weight: 500;
+  }
+
+  &__renewal {
+    color: #9CA3AF;
+  }
+
+  &__upgrade-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+  }
+
+  &__usage-stats {
+    display: grid;
+    gap: 1rem;
+  }
+
+  &__usage-bar {
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 9999px;
+    overflow: hidden;
+  }
+
+  &__usage-progress {
+    height: 100%;
+    background: linear-gradient(90deg, #60A5FA 0%, #7C3AED 100%);
+    border-radius: 9999px;
+    transition: width 0.3s ease;
+  }
+
+  &__usage-numbers {
+    display: flex;
+    justify-content: space-between;
+    color: #9CA3AF;
+    font-size: 0.875rem;
+  }
+
+  &__stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+  }
+
+  &__stat-card {
+    background: rgba(31, 41, 55, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+
+    svg {
+      color: #60A5FA;
+    }
+  }
+
+  &__stat-info {
+    h3 {
+      font-size: 0.875rem;
+      color: #9CA3AF;
+      margin-bottom: 0.25rem;
+    }
+
+    p {
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+  }
+}
